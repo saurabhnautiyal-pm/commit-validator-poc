@@ -1,0 +1,22 @@
+{
+  "name": "sementic-release-poc",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "commit-message-validator": "^1.0.2",
+    "husky": "^8.0.2",
+    "semantic-release": "^19.0.5"
+  },
+  "config": {
+    "commit-message-validator": {
+      "pattern": [
+        "(chore|docs|feat|fix|improvement|perf|refactor|revert|style|test)\\([a-zA-Z]+-[0-9]+\\):"
+      ],
+      "errorMessage": "\nPlease provide the commit message in the following format.\n\t<standard_convention>(<jira_ticket>): <msg> \nStandard conventions(type) must be one of [build, chore, ci, docs, feature, fix, improvement, perf, refactor, revert, style, test]\n\nExample: feature(CD-1124): Adds commit message lints\n\n"
+    }
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
